@@ -1,0 +1,238 @@
+#mainNavigation a {
+    font-family: 'Cabin', sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.4)
+  }
+   
+  .dropdown-menu {
+    
+    background:#000000
+    
+  }
+  a.dropdown-toggle {
+    color:#dfdfdf !important
+  }
+  a.dropdown-item:hover {
+    color:#1879b9 !important
+  }
+  .nav-item a{
+    color:#dfdfdf;
+  }
+  .nav-item a:hover {
+    color:#fff
+  }
+  .nav-item{
+    min-width:12vw;
+  }
+  #mainNavigation {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    padding-bottom:130px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top,  rgba(2, 5, 230) 0%,rgba(173, 165, 223, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgb(2, 5, 230) 0%,rgba(173, 165, 223, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(2, 5, 230) 0%,rgba(173, 165, 223, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  }
+  #navbarNavDropdown.collapsing .navbar-nav,
+  #navbarNavDropdown.show .navbar-nav{
+    background:#1540ce;
+    padding:12px;
+  }
+
+  .navbar-brand{
+    position: relative;
+    right: 0px;
+    width: 80px;
+    mix-blend-mode: multiply;
+    margin-left:0px;
+}
+.admin{
+  position: relative;
+  left: 1200px;
+  top:0px;
+
+}
+.sidebar {
+  position: fixed;
+  top: 125px;
+  bottom: 0;
+  left: 10px;
+  width: 290px;
+  z-index: 1000;
+
+  display: block;
+  padding: auto;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  
+  border-right: 1px solid rgb(177, 177, 177);
+  }
+
+  input{
+    padding:10px;
+    margin:20px;
+    width: 140px;
+    background-color:#c3e8ff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+    
+
+    
+}
+#add-button{
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  border-radius:10px ;
+  width: 60px;
+  height:48px;
+  font-weight: bold;
+  background-color: #0c53ee;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 7px;
+}
+#form-btn{
+  padding: 10px 20px 10px 20px;
+  margin :2px;
+  background-color: #0d6ef0;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 4px;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+body {
+    font-family: 'Maven Pro', sans-serif
+}
+
+body {
+    background-color: #eee
+}
+
+.add {
+    border-radius: 20px
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: all 1s;
+    cursor: pointer
+}
+
+.card:hover {
+    -webkit-box-shadow: 3px 5px 17px -4px #777777;
+    box-shadow: 3px 5px 17px -4px #777777;
+    transform: scale(1.0);
+}
+
+.ratings i {
+    color: green
+}
+
+.apointment button {
+    border-radius: 20px;
+    background-color: #eee;
+    color: #000;
+    border-color: #eee;
+    font-size: 13px
+}
+.content{
+  position: fixed;
+  top: 95px;
+  
+  bottom: 0;
+  left: 300px;
+  width: 1025px;
+  z-index: 1000;
+
+  display: block;
+  padding: auto;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  
+  border-right: 1px solid rgb(177, 177, 177);
+}
+
+.sidebar{
+  height:100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 25px;
+
+}
+.mainbar{
+  height:100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 25px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.main-content2{
+  position: relative;
+  top: 90px;
+  width: 1300px;
+  padding:16px;
+  margin-top: 50px; 
+  text-align: center;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  
+}
+
+a:link {
+  color: green;
+}
+
+
+table{
+  width:100%;
+}
+#example_filter{
+  float:right;
+}
+#example_paginate{
+  float:right;
+}
+label {
+  display: inline-flex;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+ 
+}

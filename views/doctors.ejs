@@ -1,0 +1,58 @@
+<%- include("partials/header"); -%>
+
+
+<div class="col-sm-3 col-md-2 sidebar filter-form">
+    <form action="/doctor" method="get">
+    <table class="nav nav-sidebar">
+       <tr>
+        <td><input type="text" placeholder="Enter First Name" name="fName"></td>
+       </tr>
+       <tr>
+        <td><input type="text" placeholder="Enter Last Name" name="lName"></td>
+       </tr>
+       <tr>
+        <td><input type="date" name="dateOfBirth"></td>
+       </tr>
+       <tr>
+        <td><input type="text" name="speciality" placeholder="Enter the speciality"></td>
+       </tr>
+       <tr>
+        <td><div class="d-flex justify-content-between mb-3" > <button class="btn btn-success " type="submit" style="background-color: blue; margin-left: 100px;">Search</button> </div></td>
+       </tr>
+       <tr>
+        
+        <td><div class="d-flex justify-content-between mb-3"> <button class="btn btn-success add" style="background-color: blue; margin-left: 80px; margin-top: 10px;" ><a href="/newDoctor">Add Doctors</a> </button> </div></td>
+       </tr>
+    </table>
+    </form>
+    </div>
+
+
+    <div class="container content mt-5 mb-5">
+        <div class="row g-2">
+        <% for(let i=0; i<doctorsArray.length; i++){%>  
+            
+                <div class="col-md-3">
+                    <div class="card p-2 py-3 text-center">
+                        <div class="img mb-2"> <img src="<%= doctorsArray[i].avatar%> z" width="70" class="rounded-circle"> </div>
+                        <h5 class="mb-0"><%=doctorsArray[i].fName%> <%=doctorsArray[i].lName%></h5> <small><%=doctorsArray[i].speciality%></small>
+                        <div class="ratings mt-2"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+                    </div>
+                </div>
+            
+                <%};%>
+
+
+
+
+
+
+
+
+
+
+            
+        </div>
+
+<%- include("partials/footer"); -%>

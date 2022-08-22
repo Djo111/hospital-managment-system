@@ -1,0 +1,37 @@
+<%- include("partials/header"); -%>
+<div class="col-sm-3 col-md-2 sidebar filter-form">
+    <form action="/doctor" method="get">
+    <table class="nav nav-sidebar">
+       <tr>
+        <td><input type="text" placeholder="Enter First Name" name="fName"></td>
+       </tr>
+       <tr>
+        <td><input type="text" placeholder="Enter Last Name" name="lName"></td>
+       </tr>
+       <tr>
+        <td><input type="date" name="dateOfBirth"></td>
+       </tr>
+       <tr>
+        <td><input type="text" name="speciality" placeholder="Enter the speciality"></td>
+       </tr>
+       <tr>
+        <td><div class="d-flex justify-content-between mb-3" > <button class="btn btn-success " type="submit" style="background-color: blue; margin-left: 100px;">Search</button> </div></td>
+       </tr>
+       <tr>
+        
+        <td><div class="d-flex justify-content-between mb-3"> <button class="btn btn-success add" style="background-color: blue; margin-left: 80px; margin-top: 10px;">Add Employees</button> </div></td>
+       </tr>
+    </table>
+    </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>
