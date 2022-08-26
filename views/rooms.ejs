@@ -1,5 +1,109 @@
 <%- include("partials/header"); -%>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.tabledit.js"></script>
+<div class="container" style="position: relative; top: 215px; ">
+    <div class="input-group">
+        <input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for room name.." title="Type in a name" autocomplete="off">
+        <span class="input-group-btn" 
+            style="width:0px;"></span>
+        <input type="text" id="myInput2" class="form-control" onkeyup="myFunction2()" placeholder="Search for patients names.." title="Type in a name" autocomplete="off">
+    </div>
 
+	<div class="row" style="position: relative; top: 10px; left: -70px;">
+        
+	<table class="table table-bordered table table-hover" id="example" style="width:100%">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Room Number</th>
+                <th>Room Categorie</th>
+                <th>Patient</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          
+          <% for(let i=0; i<roomArray.length ; i++) {%>
+            <form action="/update" method="post">
+            <tr>
+                 
+                <td>blaala</td>
+                <td>1 </td>
+                <td>csdcc</td>
+                
+                <td><div class="d-inline p-2 "><%= roomArray[i].patient %></div>
+                  
+                  <div class="d-inline p-2 "><input type="text" placeholder="enter patient" name="patient" autocomplete="off">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="patientupdateBtn"  value="<%=roomArray[i]._id%>" ><i class="fas fa-edit"></i></button>
+                  </div>
+                 
+                </td> 
+                <td><div class="d-inline p-2 "><%= roomArray[i].date.getDate()+1%>-<%=roomArray[i].date.getMonth()+1%>-<%=roomArray[i].date.getFullYear()%></div>
+                  
+                  <div class="d-inline p-2 "><input type="date" placeholder="Enter Date" name="date" autocomplete="off">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="dateupdateBtn"  value="<%=roomArray[i]._id%>" ><i class="fas fa-edit"></i></button>
+                  </div></td>
+               
+            </tr></form>
+            <%};%>
+           
+        </tbody>
+        
+    </table>
+    <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("example");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        function myFunction2() {
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput2");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("example");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }       
+          }
+        }
+        $(document).ready(function(){
+  // example.php will be used to send the data to the sever database  
+   $('#example-1').Tabledit({
+    url: 'example.php',
+    editButton: false,
+    deleteButton: false,
+    hideIdentifier: true,
+    columns: {
+        identifier: [0, 'id'],
+        editable: [[2, 'first'], [3, 'last'],[3, 'nickname']]
+    }
+}); 
+    
+});
+        </script>
+	</div>
+</div>
 
 
 

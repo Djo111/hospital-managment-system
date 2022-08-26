@@ -16,6 +16,7 @@ mongoose.connect("mongodb://localhost:27017/Hospital",{useNewUrlParser: true});
 
 const Appointment = require("./models/appointments.js");
 const Doctor = require("./models/doctors.js");
+const Room = require("./models/rooms");
 
 //---------------------------------------------------------------------------------
 
@@ -123,9 +124,51 @@ app.post("/delete", function(req, res){
 
 //Rooms:::
 app.get("/rooms", function(req, res){
-    res.render("rooms");
+    Room.find(function(err, rooms){
+        if (err){
+            console.log(err);
+        }else {
+            
+            res.render("rooms",{roomArray: rooms});
+            
+        }
+    });
 });
+const room = new Room({
+    department : "A&E",
+    roomNumber : 1,
+    roomCategorie : "day room",
+    patient : 'djo',
+    date : '2010'
+});
+//room.save();
+app.post("/update", function(req, res){
+    
+    const patientupdatebtn = req.body.patientupdateBtn;
+    const dateupdatebtn = req.body.dateupdateBtn;
+    if(patientupdatebtn){
+    Room.findByIdAndUpdate(patientupdatebtn, { patient : req.body.patient },{ new: true },
+                            function (err) {
+    if (err){
+        console.log(err)
+    }
+    else{
+        
+        res.redirect("/rooms");
+    }
+});}else{
+Room.findByIdAndUpdate(dateupdatebtn, { date : req.body.date },{ new: true },
+    function (err) {
+if (err){
+console.log(err)
+}
+else{
 
+res.redirect("/rooms");
+}
+});}
+    
+});
 
 //---------------------------------------------------------------------------------
 
