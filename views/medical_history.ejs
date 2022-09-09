@@ -1,0 +1,118 @@
+<%- include("partials/header"); -%>
+ 
+<div class="container" style="position: relative; top: 215px; ">
+    
+
+	<div class="row" style="position: relative; top: 10px; left: -70px;">
+        <caption>CURRENT and PAST Medications</caption>   
+	<table id="example" class="table table-bordered table-hover" style="width:100%">
+        
+        <thead>
+            
+            <tr>
+               <form action="/medical_history" method="post">
+                    <th><input type="number" placeholder="Enter medical record" name="Mmr" autocomplete="off"></th>
+                    <th><input type="text"  name="medicationName" placeholder="enter medication" autocomplete="off"></th>
+                    <th><input type="text" placeholder="Enter physician" name="Mphysician" autocomplete="off"></th>
+                    <th><input type="date" placeholder="Enter start date" name="MstartDate" autocomplete="off"></th>
+                    <th><input type="date" placeholder="Enter end date" name="MendDate" autocomplete="off"></th>
+                    <th><input type="text" placeholder="Enter medication purpose" name="medicationPurpose" autocomplete="off"></th>
+                    <th><button class="btn btn-primary btn-lg btn-block" type="submit" style="position: relative; top: -17px;"">+</button></th>
+                </form>
+                
+            </tr>
+            <tr>
+                
+                <th>Medical Record</th>
+                <th>Medication</th>
+                <th>Physician</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for(let i=0; i<medArray.length ; i++) {%>
+            <tr>
+                 
+                <td><%= medArray[i].medicalRecord%></td>
+                <td><%=medArray[i].meicationName%> </td>
+                <td><%=medArray[i].Mphysician%></td>
+                <td><%=medArray[i].medicationStartDate.getDate()+1%>-<%=medArray[i].medicationStartDate.getMonth()+1%>-<%=medArray[i].medicationStartDate.getFullYear()%></td>
+                <td><%=medArray[i].medicationEndDate.getDate()+1%>-<%=medArray[i].medicationEndDate.getMonth()+1%>-<%=medArray[i].medicationEndDate.getFullYear()%></td>
+                <td><%=medArray[i].medicationPurpose%></td>
+                <form action="/deleteMedication" method="post">
+                    <td><a class="tooltips" data-toggle="tooltip" data-placement="top" title="Delete">
+                        <button type="submit" name="mdeleteBtn" onclick="return confirm('Are you sure to delete this medication ?');" value="<%=medArray[i]._id%>" style="border: 0; background: none;">
+                            <i class="fa fa-trash fa-2x" aria-hidden="true" style="position: relative; left: 3px;"></i>
+                        </button>
+              
+                     </a></td>
+                    
+                </form>
+            </tr>
+            <%};%>
+        </tbody>
+        
+    </table>
+   
+	</div>
+
+
+    <div class="row" style="position: relative; top: 50px; left: -70px;">
+        <caption>SURGICAL PROCEDURES</caption>   
+	<table id="example" class="table table-bordered table-hover" style="width:100%">
+        
+        <thead>
+            
+            <tr>
+               <form action="/surgical_procedures" method="post">
+                    <th><input type="number" placeholder="Enter medical record" name="Mmr" autocomplete="off"></th>
+                    <th><input type="text" placeholder="enter procedure" name="procedure"  autocomplete="off"></th>
+                    <th><input type="text" placeholder="Enter physician" name="Sphysician" autocomplete="off"></th>
+                    <th><input type="text" placeholder="Enter hospital" name="hospital" autocomplete="off"></th>
+                    <th><input type="date" placeholder="Enter date" name="date" autocomplete="off"></th>
+                    <th><input type="text" placeholder="Enter notes" name="notes" autocomplete="off"></th>
+                    <th><button class="btn btn-primary btn-lg btn-block" type="submit" style="position: relative; top: -17px;"">+</button></th>
+                </form>
+                
+            </tr>
+            <tr>
+                
+                <th>Medical Record</th>
+                <th>Procedure</th>
+                <th>Physician</th>
+                <th>Hospital</th>
+                <th>Date</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for(let i=0; i<surgArray.length ; i++) {%>
+            <tr>
+                 
+                <td><%= surgArray[i].medicalRecord%></td>
+                <td><%=surgArray[i].procedure%> </td>
+                <td><%=surgArray[i].Sphysician%></td>
+                <td><%=surgArray[i].hospital%></td>
+                <td><%=surgArray[i].date.getDate()+1%>-<%=surgArray[i].date.getMonth()+1%>-<%=surgArray[i].date.getFullYear()%></td>
+                <td><%=surgArray[i].notes%></td>
+                <form action="/deleteSurgerie" method="post">
+                    <td><a class="tooltips" data-toggle="tooltip" data-placement="top" title="Delete">
+                        <button type="submit" name="sdeleteBtn" onclick="return confirm('Are you sure to delete this surgerie ?');" value="<%=surgArray[i]._id%>" style="border: 0; background: none;">
+                            <i class="fa fa-trash fa-2x" aria-hidden="true" style="position: relative; left: 3px;"></i>
+                        </button>
+              
+                     </a></td>
+                    
+                </form>
+            </tr>
+            <%};%>
+        </tbody>
+        
+    </table>
+   
+	</div>
+</div>
+
+<%- include("partials/footer"); -%>

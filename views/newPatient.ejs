@@ -1,0 +1,53 @@
+
+<%- include('partials/header'); -%>
+
+<div class="main-content2">
+    <div class="col-md-12 order-md-1 new-doctor">
+        <h2 class="mb-3 title ">Add a new PAtient</h2>
+
+        <form class="needs-validation" action="/newPatient" method="post">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="fName">First name</label>
+              <input type="text" class="form-control" id="fName" name="fName" placeholder="" value="" autocomplete="off" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lName">Last name</label>
+              <input type="text" class="form-control" id="lName" name="lName" placeholder="" value="" autocomplete="off" required>
+          </div>
+    
+          <div class="mb-3">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" name="id" placeholder="ID" autocomplete="off" required>
+          </div>
+    
+          <div class="mb-3">
+            <label for="dateOfBirth">Date Of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" autocomplete="off">
+          </div> 
+    
+          <div class="mb-3">
+            <label for="sexe">Sexe</label><br>
+            <select name="sexe" id="sexe">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter the phone number" autocomplete="off">
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="mrID">Medical Record ID</label><br>
+            <input type="number" class="form-control"name="mrID" id="mrID" placeholder="Enter the medical record id" autocomplete="off">
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+
+    <%- include('partials/footer'); -%>

@@ -230,16 +230,19 @@ const login = require('./routes/login');
 const employee= require('./routes/employee');
 const doctor = require('./routes/doctor');
 const appointment = require('./routes/appointment');
-const room = require('./controller/roomController');
+const room = require('./routes/room');
 const dashboard = require('./routes/dashboard');
 const patient = require('./routes/patient');
+const medical_history = require("./routes/medical_history");
+
 app.use('/' ,dashboard);
 app.use('/',login);
 app.use('/',doctor);
 app.use('/',employee);
 app.use('/',appointment);
-//app.use('/',room);
+app.use('/',room);
 app.use('/',patient);
+app.use('/', medical_history);
 
 app.listen(3000, function(){
     console.log("server started on port 3000");
