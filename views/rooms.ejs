@@ -31,15 +31,23 @@
                 <td>1 </td>
                 <td>csdcc</td>
                 
-                <td><div class="d-inline p-2 "><%= roomArray[i].patient %></div>
-                  
+                <td>
+                  <% if(roomArray[i].patient != null) {%>
+                  <div class="d-inline p-2 "><%= roomArray[i].patient %></div>
+                  <%}else{ %>
+                    <div class="d-inline p-2 ">none</div>
+                    <%};%>
                   <div class="d-inline p-2 "><input type="text" placeholder="enter patient" name="patient" autocomplete="off">
                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="patientupdateBtn"  value="<%=roomArray[i]._id%>" ><i class="fas fa-edit"></i></button>
                   </div>
                  
                 </td> 
-                <td><div class="d-inline p-2 "><%= roomArray[i].date.getDate()+1%>-<%=roomArray[i].date.getMonth()+1%>-<%=roomArray[i].date.getFullYear()%></div>
-                  
+                <td>
+                <% if(roomArray[i].date != null) {%>
+                <div class="d-inline p-2 "><%= roomArray[i].date.getDate()+1%>-<%=roomArray[i].date.getMonth()+1%>-<%=roomArray[i].date.getFullYear()%></div>
+                  <%}else{ %>
+                    <div class="d-inline p-2 ">none</div>
+                    <%};%>
                   <div class="d-inline p-2 "><input type="date" placeholder="Enter Date" name="date" autocomplete="off">
                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="dateupdateBtn"  value="<%=roomArray[i]._id%>" ><i class="fas fa-edit"></i></button>
                   </div></td>
