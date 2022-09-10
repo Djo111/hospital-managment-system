@@ -235,6 +235,19 @@ const dashboard = require('./routes/dashboard');
 const patient = require('./routes/patient');
 const medical_history = require("./routes/medical_history");
 const doctorProfile = require("./routes/doctorProfile");
+process.on('uncaughtException', err => {
+    console.log(`ERROR : ${err.message}`);
+    console.log("uncaught exception error ,Shutting down the server...");
+    process.exit(1);
+
+});
+process.on('unhandledRejection', err => {
+    console.log(`Error : ${err.message}`);
+    console.log("Shutting down the server due to unhandled Promise rejection");
+    server.close(() => {
+        process.exit(1);
+    });
+});
 
 app.use('/' ,dashboard);
 app.use('/',login);

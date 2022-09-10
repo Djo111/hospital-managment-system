@@ -4,6 +4,19 @@ exports.getAllRooms = catchAsyncErrors(async(req,res,next)=>{
     const rooms = await Room.find({});
     res.render("rooms",{roomArray: rooms});
 })
+exports.addRoom = catchAsyncErrors(async(req, res, next)=>{
+    const room = new Room({
+        department : req.body.department,
+        roomNumber : req.body.roomNumber,
+        roomCategorie : req.body.roomC,
+        patient : req.body.patient,
+        date : req.body.date
+    });
+    room.save();
+    res.redirect("/rooms");
+    next();
+})
+
 
 exports.updateRoom = catchAsyncErrors(async(req,res,next)=>{
         const patientupdatebtn = req.body.patientupdateBtn;
@@ -28,4 +41,14 @@ exports.updateRoom = catchAsyncErrors(async(req,res,next)=>{
         res.redirect("/rooms");
         }
     });}
+})
+
+exports.deleteRoom = catchAsyncErrors(async(req, res, next)=>{
+    const deletebtn = req.body.deleteBtn;
+    Room.findByIdAndRemove(deletebtn, function(err){
+        if(!err){
+            console.log("Succecfully deleted room");
+            res.redirect("/rooms");
+        }
+    });
 })
