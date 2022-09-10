@@ -234,6 +234,7 @@ const room = require('./routes/room');
 const dashboard = require('./routes/dashboard');
 const patient = require('./routes/patient');
 const medical_history = require("./routes/medical_history");
+const doctorProfile = require("./routes/doctorProfile");
 
 app.use('/' ,dashboard);
 app.use('/',login);
@@ -243,6 +244,7 @@ app.use('/',appointment);
 app.use('/',room);
 app.use('/',patient);
 app.use('/', medical_history);
+app.use('/', doctorProfile);
 
 app.listen(3000, function(){
     console.log("server started on port 3000");
