@@ -44,12 +44,13 @@
 
   function drawChart() {
       
-    const availableRooms = 8 ;
+    const availableRooms = <%= availableRooms %> ;
+    const totalRooms = <%= totalRooms %> ;
     var data = google.visualization.arrayToDataTable([
 
       ['Task', 'Hours per Day'],
       ['Available Rooms',     availableRooms],
-      ['Reserved Rooms',      70-availableRooms]
+      ['Reserved Rooms',      totalRooms-availableRooms]
     ]);
 
     var options = {

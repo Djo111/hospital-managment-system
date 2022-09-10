@@ -1,31 +1,19 @@
 <%- include("partials/header"); -%>
-<div class="col-sm-3 col-md-2 sidebar filter-form">
-    <form action="/doctor" method="get">
-    <table class="nav nav-sidebar">
-       <tr>
-        <td><input type="text" placeholder="Enter First Name" name="fName" autocomplete="off"></td>
-       </tr>
-       <tr>
-        <td><input type="text" placeholder="Enter Last Name" name="lName" autocomplete="off"></td>
-       </tr>
-       <tr>
-        <td><input type="date" name="dateOfBirth" autocomplete="off"></td>
-       </tr>
-       <tr>
-        <td><input type="text" name="speciality" placeholder="Enter the speciality" autocomplete="off"></td>
-       </tr>
-       <tr>
-        <td><div class="d-flex justify-content-between mb-3" > <button class="btn btn-success " type="submit" style="background-color: blue; margin-left: 100px;">Search</button> </div></td>
-       </tr>
-       <tr>
-        
-        <td><div class="d-flex justify-content-between mb-3"> <button class="btn btn-success add" style="background-color: blue; margin-left: 80px; margin-top: 10px;"><a type="hidden" href="/newEmployee">Add Employees</a> </button> </div></td>
-       </tr>
-    </table>
-    </form>
-    </div>
 
-    <div class="container content mt-5 mb-5">
+
+  
+        <div class="container content">
+            <div class="filter-form">
+                <form action="/employee" method="get">
+            
+                    <input type="text" placeholder="Enter First Name" name="fName" autocomplete="off">
+                    <input type="text" placeholder="Enter Last Name" name="lName" autocomplete="off">
+                    <input type="date" name="dateOfBirth">
+                    <input type="text" name="speciality" placeholder="Enter the speciality" autocomplete="off">
+                    <button id="form-btn" type="submit">Search</button>
+                </form>
+                <a id="add-button" href="/newEmployee">+</a>
+            </div>
         <div class="row g-2">
             <% for(let i=0; i<employeesArray.length ; i++){%>
 
@@ -89,6 +77,8 @@
 
 
         </div>
+    </div>
+    
 
 
 

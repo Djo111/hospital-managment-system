@@ -1,5 +1,6 @@
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const Doctor = require('../models/doctors');
+const APIFeatures = require('../utils/APIFeatures');
 
 
 exports.getDoctors = catchAsyncErrors(async(req,res,next)=>{
@@ -35,4 +36,20 @@ exports.addNewDoctor = catchAsyncErrors(async(req,res,next)=>{
 
     res.redirect("/doctors");
     next();
+})
+exports.deleteDoctor = catchAsyncErrors(async(req,res,next)=>{
+    const id = req.query.id;
+    Doctor.findByIdAndDelete(id, function (err) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            res.redirect('/doctors');
+        }
+    });
+});
+exports.searchDoctor = catchAsyncErrors(async(req,res,next)=>{
+    const apiFeature =  new APIFeatures(Doctor,req.query).filter();
+    const results = await apiFeature.query;
+    res.render('doctors',{doctorsArray: results});
 })

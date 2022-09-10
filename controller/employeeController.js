@@ -1,5 +1,6 @@
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const Employee = require("../models/employees");
+const APIFeatures = require('../utils/APIFeatures');
 
 
 exports.getEmployees = catchAsyncErrors(async(req,res,next)=>{
@@ -40,4 +41,9 @@ exports.deleteEmployee = catchAsyncErrors(async(req, res, next)=>{
             res.redirect("/employees");
         }
     });
+})
+exports.searchEmployee = catchAsyncErrors(async(req,res,next)=>{
+    const apiFeature =  new APIFeatures(Employee,req.query).filter();
+    const results = await apiFeature.query;
+    res.render('employees',{employeesArray: results});
 })

@@ -4,23 +4,63 @@
     <% for(let i=0; i<doctorsArray.length; i++){%>  
             
         
-            
-                <div class="img mb-2" style="position: relative; left:-500px; top:80px;  "> <img src="<%= doctorsArray[i].avatar%> z" width="150" class="rounded-circle"> </div>
-                <h2 class="mb-0" style="position: relative; left:-300px; top:0px;  "><%=doctorsArray[i].fName%> <%=doctorsArray[i].lName%></h2> 
+            <div class="profile-container">
+                <div class="avatar-container"> 
+                    <div > <img src="<%= doctorsArray[i].avatar%> z" width="150" class="rounded-circle"> </div>
+                    <h2><%=doctorsArray[i].fName%> <%=doctorsArray[i].lName%></h2> 
+                    <a href="/doctor/delete?id=<%=doctorsArray[i]._id%>" class="deleteBtn">Delete</a>
+                </div>
                 
                 
-                <table style="position: relative; left:-200px; top:100px;">
-                    <tr>
-                        <td>Date of Birth</td>
-                        <td><%=doctorsArray[i].dateOfBirth%></td>
-                    </tr>
-                    <tr>
-                        <td>Contact Number</td>
-                        <td><%=doctorsArray[i].speciality%></td>
-                    </tr>
+                    <div class="infos-container">
+                        <div class="doctorProfile-card">
+                            <div>
+                                <h3>Date of Birth :</h3>
+                                <p><%=doctorsArray[i].dateOfBirth%></p>
+                            </div>
+                            <div>
+                                <h3>Speciality :</h3>
+                                <p><%=doctorsArray[i].speciality%></p>
+                            </div>
+                            <div>
+                                <h3>Gender :</h3>
+                                <p><%=doctorsArray[i].sex%></p>
+                            </div>
+                            <div>
+                                <h3>Phone Number :</h3>
+                                <p><%=doctorsArray[i].phoneNumber%></p>
+                            </div>
+                            <div>
+                                <h3>Attended School :</h3>
+                                <p><%=doctorsArray[i].schoolAttended%></p>
+                           </div>
+                        </div>
+                        <div class="doctorProfile-card">
+                           
+                            <div>
+                                <h3>Degree Held :</h3>
+                                <p><%=doctorsArray[i].degreeHeld%></p>
+                            </div>
+                            <div>
+                                <h3>License :</h3>
+                                <p><%=doctorsArray[i].license%></p>
+                            </div>
+                            <div>
+                                <h3>Previous Company :</h3>
+                                <p><%=doctorsArray[i].previousCompany%></p>
+                            </div>
+                            <div>
+                                <h3>Previous Title :</h3>
+                                <p><%=doctorsArray[i].previousTitle%></p>
+                            </div>
+                            <div>
+                                <h3>Internship :</h3>
+                                <p><%=doctorsArray[i].internship%></p>
+                            </div>
+                        </div>
+                    </div>
 
-                </table>
-                
+            </div>
                 
                 
                 

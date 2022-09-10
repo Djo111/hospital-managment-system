@@ -1,0 +1,61 @@
+.profile-container{
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
+.avatar-container{
+    
+    text-align: left;
+    display: flex;
+    position: relative;
+}
+.infos-container{
+
+    display: flex;
+    justify-content: space-around;
+    border-radius: 40px;
+
+}
+.avatar-container img{
+    margin-left: 40px;
+}
+.avatar-container h2 {
+    margin-top: auto ;
+    margin-bottom: auto;
+    margin-left: 15px;
+    
+}
+.doctorProfile-card{
+    width: 45%;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 10px;
+}
+.doctorProfile-card div{
+    display: flex;
+    padding: 25px;
+    justify-content: space-between;
+    
+}
+.deleteBtn{
+    padding: 30px;
+    background-color: red;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    z-index: 200;
+    border-radius:10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    right: 40px;
+    bottom: 55px;
+
+
+
+}

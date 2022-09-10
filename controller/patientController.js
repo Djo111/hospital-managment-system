@@ -1,6 +1,6 @@
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const Patient = require("../models/patients");
-
+const APIFeatures = require('../utils/APIFeatures');
 
 
 exports.getPatients = catchAsyncErrors(async(req,res,next)=>{
@@ -32,4 +32,10 @@ exports.addPatient = catchAsyncErrors(async(req, res, next)=>{
     patient.save();
 
     res.redirect("/patients");
+ });
+
+ exports.searchPatient = catchAsyncErrors(async(req,res,next)=>{
+    const apiFeature =  new APIFeatures(Patient,req.query).filter();
+    const results = await apiFeature.query;
+    res.render('patients',{patientsArray: results});
  });

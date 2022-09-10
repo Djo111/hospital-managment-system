@@ -1,3 +1,6 @@
+*{
+  position: relative;
+}
 #mainNavigation a {
     font-family: 'Cabin', sans-serif;
     font-size:14px;
@@ -151,20 +154,14 @@ body {
     font-size: 13px
 }
 .content{
-  position: fixed;
-  top: 95px;
-  
-  bottom: 0;
-  left: 300px;
-  width: 1025px;
+  margin-left: auto;
+  margin-right: auto ;
   z-index: 1000;
+  position: relative;
+  top: 160px;
+  width: 100%;
+  left: 105px;
 
-  display: block;
-  padding: auto;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  
-  border-right: 1px solid rgb(177, 177, 177);
 }
 
 .sidebar{
@@ -273,4 +270,7 @@ label {
   content: "";
   display: table;
   clear: both;
+}
+.filter-form{
+  display: block ruby;
 }
