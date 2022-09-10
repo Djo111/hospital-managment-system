@@ -34,11 +34,33 @@ const doctorSchema = new mongoose.Schema({
             //required: true,
             default: 'https://cdn5.vectorstock.com/i/thumb-large/54/69/male-user-icon-vector-8865469.jpg'
     },
-    salary: {
-        type: Number,
-        required: [true, "Enter the docotor's Salary"]
-    }
-
+    
+    address : {
+        type: String,
+        required: [true, "Enter the docotor's address"]
+    },
+    schoolAttended: {
+        type: String,
+        
+    },
+    degreeHeld: {
+        type: String,
+        required: [true, "Enter the docotor's degree held"]
+    },
+    license : {
+        type: String,
+        required: [true, "Enter the docotor's license"]
+    },
+    previousCompany:{
+        type: String,
+        
+    },
+    previousTitle:{
+        type: String,
+   },
+   internship: {
+    type: String,
+}
 });
 
 module.exports = new mongoose.model("Doctor", doctorSchema);

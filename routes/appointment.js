@@ -5,6 +5,6 @@ const { isAuthenticatedUser } = require('../middlewares/auth');
 
 router.route('/appointments').get(isAuthenticatedUser,getAppointments);
 router.route('/appointments').post(isAuthenticatedUser,addNewAppointment);
-router.route('/delete').get(isAuthenticatedUser,deleteAppointment);
+router.route('/delete').post(isAuthenticatedUser,deleteAppointment);
 
 module.exports = router;

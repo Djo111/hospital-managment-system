@@ -36,7 +36,10 @@
                     <div class="card p-2 py-3 text-center">
                         <div class="img mb-2"> <img src="<%= doctorsArray[i].avatar%> z" width="70" class="rounded-circle"> </div>
                         <h5 class="mb-0"><%=doctorsArray[i].fName%> <%=doctorsArray[i].lName%></h5> <small><%=doctorsArray[i].speciality%></small>
-                        <div class="ratings mt-2"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                        <p class="mb-0 text-muted">Phone Number</p>
+                                            <h6>
+                                                <%=doctorsArray[i].phoneNumber%>
+                                            </h6>
                         <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
                     </div>
                 </div>

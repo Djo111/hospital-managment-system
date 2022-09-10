@@ -1,0 +1,68 @@
+
+<%- include('partials/header'); -%>
+
+<div class="main-content2">
+    <div class="col-md-12 order-md-1 new-doctor">
+        <h2 class="mb-3 title ">Add a new Employee</h2>
+
+        <form class="needs-validation" action="/newEmployee" method="post">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="fName">First name</label>
+              <input type="text" class="form-control" id="fName" name="fName" placeholder="" value="" autocomplete="off" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lName">Last name</label>
+              <input type="text" class="form-control" id="lName" name="lName" placeholder="" value="" autocomplete="off" required>
+          </div>
+    
+          <div class="mb-3">
+            <label for="id">Speciality</label>
+            <input type="text" list="specialities" class="form-control" name="speciality" placeholder="speciality" autocomplete="off" required>
+            <datalist id="specialities">
+              <option value="Residents, interns, and medical students (house staff)">
+              <option value="Specialists">
+              <option value="Registered nurses">
+              <option value="Licensed practical nurses">
+              <option value="Nurse practitioners and physician’s assistants">
+              <option value="Patient advocate">
+              <option value="Patient care technicians">
+              <option value="Physical therapists">
+              <option value="Occupational therapists">
+              <option value="Hospital pharmacists">
+              <option value="Social workers">
+              <option value="Other team members">
+                                  
+            </datalist>
+          </div>
+    
+          <div class="mb-3">
+            <label for="dateOfBirth">Date Of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" autocomplete="off">
+          </div> 
+    
+          <div class="mb-3">
+            <label for="sexe">Sexe</label><br>
+            <select name="sexe" id="sexe">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+    
+          <div class="mb-3">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter the phone number" autocomplete="off">
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="mrID">Salary</label><br>
+            <input type="number" class="form-control" name="salary" id="salary" placeholder="Enter the medical record id" autocomplete="off">
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+
+    <%- include('partials/footer'); -%>

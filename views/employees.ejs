@@ -19,13 +19,76 @@
        </tr>
        <tr>
         
-        <td><div class="d-flex justify-content-between mb-3"> <button class="btn btn-success add" style="background-color: blue; margin-left: 80px; margin-top: 10px;">Add Employees</button> </div></td>
+        <td><div class="d-flex justify-content-between mb-3"> <button class="btn btn-success add" style="background-color: blue; margin-left: 80px; margin-top: 10px;"><a type="hidden" href="/newEmployee">Add Employees</a> </button> </div></td>
        </tr>
     </table>
     </form>
     </div>
 
+    <div class="container content mt-5 mb-5">
+        <div class="row g-2">
+            <% for(let i=0; i<employeesArray.length ; i++){%>
 
+                <div class="col-md-3">
+                    <div class="card p-2 py-3 text-center">
+                        <div class="img mb-2"> <img src="<%= employeesArray[i].avatar%> z" width="70" class="rounded-circle"> </div>
+                        <h4 class="mb-0">
+                            <%=employeesArray[i].fName%>
+                                <%=employeesArray[i].lName%>
+                        </h4>
+                        <p class="mb-0 text-muted">Speciality</p>
+                                            <h6>
+                                                <%=employeesArray[i].speciality%>
+                                            </h6>
+                        <div class="mt-4">
+                            <div class="mt-4">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="mt-3">
+                                            <p class="mb-0 text-muted">Date of birth</p>
+                                            <h6>
+                                                <%=employeesArray[i].dateOfBirth.getDate()+1%>-
+                                                    <%=employeesArray[i].dateOfBirth.getMonth()+1%>-
+                                                        <%=employeesArray[i].dateOfBirth.getFullYear()%>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mt-3">
+                                            <p class="mb-0 text-muted">Sexe</p>
+                                            <h6>
+                                                <%=employeesArray[i].sexe%>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-4">
+                                        <div class="mt-3">
+                                            <p class="mb-0 text-muted">Phone Number</p>
+                                            <h6>
+                                                <%=employeesArray[i].phoneNumber%>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 apointment">
+                                        <form action="/deleteEmployee" method="post">
+                                            <button class="btn btn-danger btn-sm rounded-0" type="submit" onclick="return confirm('Are you sure to delete this employee ?');" value="<%=employeesArray[i]._id%>" name="deleteEmpl" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <%};%>
+
+
+
+
+        </div>
 
 
 

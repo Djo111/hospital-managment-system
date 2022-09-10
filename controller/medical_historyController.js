@@ -48,7 +48,7 @@ exports.addSurgerie = catchAsyncErrors(async(req, res, next)=>{
 
 exports.deleteMedication = catchAsyncErrors(async(req, res, next)=>{
     const deletebtn = req.body.mdeleteBtn;
-    const medid = req.query.medid ;
+    const medid = req.body.medid;
     console.log(medid);
     Medication.findByIdAndRemove(deletebtn, function(err){
         if(!err){
@@ -60,10 +60,11 @@ exports.deleteMedication = catchAsyncErrors(async(req, res, next)=>{
 
 exports.deleteSurgerie = catchAsyncErrors(async(req, res, next)=>{
     const deletebtn = req.body.sdeleteBtn;
+    const medid = req.body.medid;
     Surgerie.findByIdAndRemove(deletebtn, function(err){
         if(!err){
             console.log("Succecfully deleted surgerie");
-            res.redirect("/medical_history");
+            res.redirect("/medical_history?medid="+medid);
         }
     });
 });

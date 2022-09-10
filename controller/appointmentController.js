@@ -20,8 +20,12 @@ exports.addNewAppointment = catchAsyncErrors(async(req,res,next)=>{
     next();
 })
 exports.deleteAppointment = catchAsyncErrors(async(req,res,next)=>{
-        const deletebtn = req.body.deleteBtn;
-        const appointment = await Appointment.findByIdAndRemove(deletebtn);
-        res.redirect('/appointments');
+    const deletebtn = req.body.deleteBtn;
+    Appointment.findByIdAndRemove(deletebtn, function(err){
+        if(!err){
+            console.log("Succecfully deleted appointment");
+            res.redirect("/appointments");
+        }
+    });
         
 })
