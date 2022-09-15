@@ -39,3 +39,14 @@ exports.addPatient = catchAsyncErrors(async(req, res, next)=>{
     const results = await apiFeature.query;
     res.render('patients',{patientsArray: results});
  });
+
+ exports.deletePatient = catchAsyncErrors(async(req,res,next)=>{
+    const deletebtn = req.body.deleteBtn;
+    Patient.findByIdAndRemove(deletebtn, function(err){
+        if(!err){
+            console.log("Succecfully deleted patient");
+            res.redirect("/patients");
+        }
+    });
+        
+})

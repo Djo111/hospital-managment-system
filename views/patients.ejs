@@ -18,7 +18,7 @@
 
                 <div class="col-md-3">
                     <div class="card p-2 py-3 text-center">
-
+                        
                         <h4 class="mb-0">
                             <%=patientsArray[i].fName%>
                                 <%=patientsArray[i].lName%>
@@ -72,6 +72,9 @@
                                     <a class="nav-link" href="/medical_history?medid=<%= patientsArray[i].medicalRecordID %>"><h5>Medical History</h5></a>
                                         </button>
                                 </div>
+                                <form action="/deletePatient" method="post">
+                                    <button class="btn btn-danger btn-sm rounded-0" type="submit" name="deleteBtn" onclick="return confirm('Are you sure to delete this patient ?');" value="<%=patientsArray[i]._id%>" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                </form>
                                 </div>
                             </div>
 
